@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IoT Smartphone Sensor App</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>IoT Smartphone Sensor App</h2>
+
+  <!-- MQTT Host and Port -->
+  <label for="host">MQTT Broker Host</label>
+  <input id="host" type="text" value="test.mosquitto.org" />
+
+  <label for="port">MQTT Broker Port</label>
+  <input id="port" type="number" value="8081" />
+
+  <button id="startBtn">Start Connection</button>
+  <button id="endBtn" disabled>End Connection</button>
+  <p id="status">Disconnected</p>
+
+  <hr />
+
+  <!-- Publish Section -->
+  <label for="topicSuffix">Engo651/Anan_Ghosh/</label>
+<input id="topicSuffix" type="text" placeholder="e.g., my_temperature" />
+
+
+  <label for="message">Message</label>
+  <textarea id="message" rows="3" placeholder="Type your message here..."></textarea>
+  <button onclick="publishMessage()">Publish</button>
+
+  <!-- GeoJSON Sharing -->
+  <button onclick="shareStatus()">Share My Status</button>
+
+  <!-- Map -->
+  <div id="map"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
