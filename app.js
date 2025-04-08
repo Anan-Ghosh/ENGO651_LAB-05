@@ -1,4 +1,3 @@
-// Extended app.js: now displays alerts for plain messages and confirms GeoJSON share on the map
 
 let client = null;
 let isConnected = false;
@@ -105,7 +104,7 @@ function onMessageArrived(message) {
     typeof payload.properties.temperature === "number";
 
   if (!isGeoJSON) {
-    // ✅ It's valid JSON but not GeoJSON — show it as info
+  
     alert("📦 Received JSON message:\n" + JSON.stringify(payload, null, 2));
     return;
   }
